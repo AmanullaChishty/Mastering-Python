@@ -10,6 +10,7 @@
 # __str__(): Returns a user-friendly string representation of the account details.
 
 import uuid
+from custom_exceptions import InsufficientFundsError
 
 
 class BankAccount:
@@ -30,8 +31,8 @@ class BankAccount:
     def withdraw(self, amount:float)->None:
         if amount>self.__balance:
             print("Insufficient Funds!")
-        else:
-            self.__balance-=amount
+            raise InsufficientFundsError("Insufficient funds for withdrawal")
+        self.__balance-=amount
     
     def get_balance(self)->float:
         return self.__balance
