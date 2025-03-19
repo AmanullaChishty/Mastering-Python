@@ -1,0 +1,7 @@
+# pip install -r requirements.rxr
+
+fastapi==0.75.0
+uvicorn==0.17.0
+pydantic==1.9.0
+pytest==7.1.0
+httpx==0.23.0
