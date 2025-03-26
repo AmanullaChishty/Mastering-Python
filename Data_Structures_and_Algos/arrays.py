@@ -67,4 +67,28 @@ print("Prob-4 Index of", target, ":", binary_search(sorted_arr, target))
 
 #Problem 5: Rotate Array
 #Rotate an array to the right by k steps. For example, rotating [1, 2, 3, 4, 5] by 2 steps yields [4, 5, 1, 2, 3].
+def rotate_array(arr,k):
+    n=len(arr)
+    k%=n
+    arr.reverse()
+    arr[:k] = reversed(arr[:k])
+    arr[k:] = reversed(arr[k:])
+    return arr
+    
+arr6 = [1, 2, 3, 4, 5]
+k = 2
+print("Prob-5 Rotated Array:", rotate_array(arr6, k))
 
+# Problem 6: Find Duplicate in an Array
+def find_duplicate(arr):
+    tracking_set = set()
+    for e in arr:
+        if e not in tracking_set:
+            tracking_set.add(e)
+        else:
+            return e
+    return None
+
+
+arr7 = [3, 1, 4, 2, 5, 3]
+print("Prob-6 Duplicate:", find_duplicate(arr7))
