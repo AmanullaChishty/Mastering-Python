@@ -92,3 +92,17 @@ def find_duplicate(arr):
 
 arr7 = [3, 1, 4, 2, 5, 3]
 print("Prob-6 Duplicate:", find_duplicate(arr7))
+
+#Problem 7: Maximum Subarray Sum (Kadane’s Algorithm)
+def max_subarray_sum(arr):
+    if not arr:
+        return 0
+    max_current = max_global = arr[0]
+    for num in arr[1:]:
+        max_current = max(num,max_current+num)
+        if max_current > max_global:
+            max_global = max_current
+    return max_global
+
+arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+print("Prob-7 Maximum Subarray Sum:", max_subarray_sum(arr))
